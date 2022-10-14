@@ -1,17 +1,31 @@
 package nbpapi;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlTransient;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@XmlRootElement(name = "product")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
 
+    @XmlTransient
     private int productId;
     private String productName;
     private String postingDate;
     private double priceUSD;
     private double pricePLN;
+
+    public Product(String productName, String postingDate, double priceUSD, double pricePLN) {
+        this.productName = productName;
+        this.postingDate = postingDate;
+        this.priceUSD = priceUSD;
+        this.pricePLN = pricePLN;
+    }
 
     public int getProductId() {
         return productId;
