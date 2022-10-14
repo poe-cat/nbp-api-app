@@ -43,7 +43,7 @@ public class RateEmb {
 
     @Override
     public String toString() {
-        return "Rate__1{" +
+        return "RateEmb {" +
                 "no='" + no + '\'' +
                 ", effectiveDate='" + effectiveDate + '\'' +
                 ", mid=" + mid +
