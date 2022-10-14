@@ -25,26 +25,24 @@ public class NbpApiAppMain {
                 System.out.println("Wyświetl wszystkie produkty - wciśnij 1");
                 System.out.println("Wyszukaj produkt po nazwie - wciśnij 2");
                 System.out.println("Dodaj nowy produkt - wciśnij 3");
-                System.out.println("Zakończ program - wciśnij 4");
+                System.out.println("Posortuj produkty wg daty księgowania - wciśnij 4");
+                System.out.println("Zakończ program - wciśnij x");
 
                 choice = (char) System.in.read();
 
                 do {
                     ignore = (char) System.in.read();
                 } while (ignore != '\n');
-            } while(choice < '1' | choice > '3' & choice != '4');
+            } while(choice < '1' | choice > '4' & choice != 'x');
 
-            if(choice == '4') break;
+            if(choice == 'x') break;
 
             System.out.println("\n");
 
-            switch(choice) {
-                case '1':
-                    listAllProducts();
-                    break;
-                case '2':
-                    searchProductByName();
-                case '3':
+            switch (choice) {
+                case '1' -> listAllProducts();
+                case '2' -> searchProductByName();
+                case '3' -> {
                     do {
                         System.out.println("Podaj nazwę produktu: ");
                         String nazwa = scanner.nextLine();
@@ -74,10 +72,12 @@ public class NbpApiAppMain {
                         answer = scanner.nextLine();
 
                     }
-                    while(answer.equalsIgnoreCase("tak"));
+                    while (answer.equalsIgnoreCase("tak"));
 
                     // Saving to XML
                     saveDataToXML();
+                }
+                case '4' -> sortListByDate();
             }
         }
         inventory.closeConnection();
@@ -96,6 +96,12 @@ public class NbpApiAppMain {
         String search = scanner.nextLine();
         List<Product> productsListBySearch = inventory.findProductsByName(search);
         for(Product p: productsListBySearch)
+            System.out.println(p);
+    }
+
+    public static void sortListByDate() {
+        List<Product> sortedList = inventory.sortProductsByDate();
+        for (Product p : sortedList)
             System.out.println(p);
     }
 
