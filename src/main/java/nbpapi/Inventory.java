@@ -117,9 +117,29 @@ public class Inventory {
         return productsList;
     }
 
-    public List<Product> searchProductByDate(String date) {
+    public List<Product> sortProductsByDate() {
 
         List<Product> productsList = new LinkedList<Product>();
+
+        try {
+            ResultSet result = statement.executeQuery("SELECT * FROM products " +
+                    "ORDER BY postingDate");
+            int productId;
+            String productName, postingDate;
+            double priceUSD, pricePLN;
+
+            while(result.next()) {
+                productId = result.getInt("productId");
+                productName = result.getString("productName");
+                postingDate = result.getString("postingDate");
+                priceUSD = result.getDouble("priceUSD");
+                pricePLN = result.getDouble("pricePLN");
+                productsList.add(new Product(productId, productName, postingDate, priceUSD, pricePLN));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
         return productsList;
     }
 
