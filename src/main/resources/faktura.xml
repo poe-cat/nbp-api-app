@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<faktura>
+    <komputer>
+        <productName>komputer 1</productName>
+        <postingDate>2022-01-10</postingDate>
+        <priceUSD>345.0</priceUSD>
+        <pricePLN>1382.208</pricePLN>
+    </komputer>
+    <komputer>
+        <productName>komputer 2</productName>
+        <postingDate>2022-01-03</postingDate>
+        <priceUSD>543.0</priceUSD>
+        <pricePLN>2195.0232</pricePLN>
+    </komputer>
+    <komputer>
+        <productName>komputer 3</productName>
+        <postingDate>2022-01-10</postingDate>
+        <priceUSD>346.0</priceUSD>
+        <pricePLN>1386.2144</pricePLN>
+    </komputer>
+</faktura>
