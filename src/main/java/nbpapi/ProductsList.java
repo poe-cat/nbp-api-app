@@ -22,6 +22,6 @@ public class ProductsList {
 
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-        jaxbMarshaller.marshal(products, new File("src\\\\main\\\\resources\\\\faktura.xml"));
+        jaxbMarshaller.marshal(products, new File("faktura.xml"));
     }
 }
