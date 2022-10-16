@@ -59,7 +59,7 @@ public class NbpApiAppMain {
                         scanner.nextLine();
 
                         // USD to PLN price
-                        double cenaPLN = restClient.calculateUsdToPLN(data) * cenaUSD;
+                        double cenaPLN = restClient.getUSDExchangeRate(data) * cenaUSD;
 
 
                         System.out.println("\nDodałeś produkt.\nNazwa: " + nazwa + ", data księgowania: "

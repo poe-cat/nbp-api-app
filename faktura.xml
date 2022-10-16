@@ -2,15 +2,15 @@
 <faktura>
     <komputer>
         <productName>komputer 1</productName>
-        <postingDate>2022-01-10</postingDate>
+        <postingDate>2022-01-03</postingDate>
         <priceUSD>345.0</priceUSD>
-        <pricePLN>1382.208</pricePLN>
+        <pricePLN>1394.628</pricePLN>
     </komputer>
     <komputer>
         <productName>komputer 2</productName>
-        <postingDate>2022-01-03</postingDate>
+        <postingDate>2022-01-10</postingDate>
         <priceUSD>543.0</priceUSD>
-        <pricePLN>2195.0232</pricePLN>
+        <pricePLN>2175.4752000000003</pricePLN>
     </komputer>
     <komputer>
         <productName>komputer 3</productName>

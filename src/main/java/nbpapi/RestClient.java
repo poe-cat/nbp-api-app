@@ -14,7 +14,7 @@ public class RestClient {
     private static String jsonUrl;
 
 
-    public double calculateUsdToPLN(String date) throws IOException {
+    public double getUSDExchangeRate(String date) throws IOException {
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.parse(date, dateTimeFormatter);
@@ -31,7 +31,7 @@ public class RestClient {
     }
 
 
-    public double calculateUsdToPLN(String date, double price) throws IOException {
+    public double getUSDExchangeRate(String date, double price) throws IOException {
 
         double exchangedRate;
 
