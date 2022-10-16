@@ -26,12 +26,10 @@ To use SQLite with Java programs, you must have SQLite JDBC Driver and Java set 
 To working correctly, you must be successfully connected to the Internet, due to the fact that the program uses an external API.
 
 ### Database and XML file
-For database file (inventory.db) go to src folder. XML file is located in src/main/resources/faktura.xml.
-
-There are 3 items already stored in database.
+Files (inventory.db for database and faktura.xml for xml file) are located in project's root directory.
+There are 3 records already stored in database.
 
 ## Running the application locally
-
 There are several ways to run application on your local machine. One way is to execute the main method in the src/main/java/nbpapi/NbpApiAppMain.java class from your IDE.
 
 Alternatively, you can use jar file from out/artifacts/nbp_api_app_jar/nbp_api_app.jar directory. Note, that you'll need Java version 17 or higher:
