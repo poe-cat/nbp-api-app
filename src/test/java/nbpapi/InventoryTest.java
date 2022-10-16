@@ -1,28 +1,20 @@
 package nbpapi;
 
-import org.junit.jupiter.api.Test;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 
+import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-
+@MockitoSettings(strictness = Strictness.STRICT_STUBS)
 public class InventoryTest {
 
-    @Test
-    void shouldAddProductToInventory() {
 
-        //given
-        Inventory inventory = new Inventory();
+    private List<Product> prepareProductsData() {
 
-        //when
-        inventory.addProduct("komputer1", "2022-10-14", 5.0, 20.0);
-        inventory.addProduct("komputer2", "2022-10-12", 5.0, 20.0);
-        List<Product> products = inventory.selectProducts();
+        Product product1 = new Product("komputer 1", "2022-01-03", 5.0, 20.0);
+        Product product2 = new Product("komputer 2", "2022-01-10", 5.0, 20.0);
 
-        //then
-        assertThat(products.size(), notNullValue());
-        assertThat(products.stream().toList(), hasSize(greaterThanOrEqualTo(3)));
-
+        return Arrays.asList(product1, product2);
     }
 }
