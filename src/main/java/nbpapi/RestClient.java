@@ -25,9 +25,8 @@ public class RestClient {
         InputStreamReader reader = new InputStreamReader(url.openStream());
 
         Rate rate = new Gson().fromJson(reader, Rate.class);
-        double usdRate = rate.getRates().get(0).getMid();
 
-        return usdRate;
+        return rate.getRates().get(0).getMid();
     }
 
 
